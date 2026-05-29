@@ -2,105 +2,44 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portail Vidéo de Noékamado</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 40px;
-            background-color: #f0f4f8;
-            color: #333;
-            overflow-x: hidden;
-        }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 40px; background-color: #f0f4f8; text-align: center; }
+        h1 { color: #222; }
+        .devise { font-style: italic; color: #8b0000; font-size: 1.3em; font-weight: bold; margin-bottom: 30px; }
         
-        h1 {
-            color: #222;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 10px;
-            text-align: center;
-        }
-
-        .devise {
-            text-align: center;
-            font-style: italic;
-            color: #8b0000;
-            font-size: 1.3em;
-            margin: 20px 0;
-            font-weight: bold;
-        }
-
-        .description {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        /* --- Animation Drapeaux --- */
-        .haiti-flag-corner {
-            position: fixed;
-            width: 80px;
-            height: 50px;
-            z-index: 100;
+        /* Drapeaux avec blason */
+        .haiti-flag {
+            position: fixed; width: 80px; height: 50px; z-index: 100;
             background: linear-gradient(to bottom, #00209F 50%, #D21034 50%);
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Coat_of_arms_of_Haiti.svg/100px-Coat_of_arms_of_Haiti.svg.png');
+            background-size: 30px 30px; background-position: center; background-repeat: no-repeat;
+            border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             animation: flag-wave 4s ease-in-out infinite;
         }
-
-        .top-left { top: 15px; left: 15px; }
-        .top-right { top: 15px; right: 15px; }
-        .bottom-left { bottom: 15px; left: 15px; }
-        .bottom-right { bottom: 15px; right: 15px; }
-
+        .tl { top: 15px; left: 15px; } .tr { top: 15px; right: 15px; }
+        .bl { bottom: 15px; left: 15px; } .br { bottom: 15px; right: 15px; }
         @keyframes flag-wave {
             0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-5px) rotate(2deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
         }
 
-        /* --- Style Vidéos --- */
-        .video-item {
-            background: white;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: transform 0.2s;
-        }
-        .video-item:hover { transform: translateY(-2px); }
-        
-        .btn-download {
-            background-color: #0070f3;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: transform 0.1s;
-        }
-        .btn-download:hover { background-color: #0051a8; transform: scale(1.05); }
+        .video-item { background: white; padding: 15px; margin: 10px auto; width: 80%; max-width: 400px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
+        .btn-download { background-color: #0070f3; color: white; text-decoration: none; padding: 10px 15px; border-radius: 4px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <!-- Drapeaux -->
-    <div class="haiti-flag-corner top-left"></div>
-    <div class="haiti-flag-corner top-right"></div>
-    <div class="haiti-flag-corner bottom-left"></div>
-    <div class="haiti-flag-corner bottom-right"></div>
+    <div class="haiti-flag tl"></div><div class="haiti-flag tr"></div>
+    <div class="haiti-flag bl"></div><div class="haiti-flag br"></div>
 
     <h1>Bienvenue au portail vidéo de Noékamado</h1>
-    
-    <!-- Phrase -->
     <p class="devise">"On est élevé dans le sang et on mourra dans le sang"</p>
 
-    <p class="description">Cliquez sur le bouton pour télécharger.</p>
-
+    <!-- Remplace "ta_video.mp4" par le vrai nom de ton fichier -->
     <div class="video-item">
-        <div class="video-title">Tuto Free Fire - Version 1</div>
-        <a href="tuto1.mp4" download="tuto1.mp4" class="btn-download">Télécharger</a>
+        <span>Ma Super Vidéo</span>
+        <a href="ta_video.mp4" download class="btn-download">Télécharger</a>
     </div>
 
 </body>
