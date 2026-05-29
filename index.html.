@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Site de Partage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #00ff66;
+        }
+        .btn-download {
+            display: inline-block;
+            background-color: #00ff66;
+            color: black;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .btn-download:hover {
+            background-color: #00cc52;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bienvenue sur mon site !</h1>
+    <p>Télécharge mes derniers fichiers et applications ci-dessous :</p>
+
+    <a href="#" class="btn-download">Télécharger le fichier (Bientôt dispo)</a>
+
+</body>
+</html>
