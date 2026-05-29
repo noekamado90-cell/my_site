@@ -8,21 +8,17 @@
         h1 { color: #222; }
         .devise { font-style: italic; color: #8b0000; font-size: 1.3em; font-weight: bold; margin-bottom: 30px; }
         
-        /* Drapeaux avec blason */
-        .haiti-flag {
-            position: fixed; width: 80px; height: 50px; z-index: 100;
+        /* Drapeaux */
+        .flag {
+            position: fixed; width: 80px; height: 50px; z-index: 999;
             background: linear-gradient(to bottom, #00209F 50%, #D21034 50%);
-            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Coat_of_arms_of_Haiti.svg/100px-Coat_of_arms_of_Haiti.svg.png');
-            background-size: 30px 30px; background-position: center; background-repeat: no-repeat;
-            border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            animation: flag-wave 4s ease-in-out infinite;
+            border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            animation: move 4s infinite alternate;
         }
-        .tl { top: 15px; left: 15px; } .tr { top: 15px; right: 15px; }
-        .bl { bottom: 15px; left: 15px; } .br { bottom: 15px; right: 15px; }
-        @keyframes flag-wave {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(3deg); }
-        }
+        @keyframes move { from { transform: translateY(0); } to { transform: translateY(-15px); } }
+        
+        .tl { top: 20px; left: 20px; } .tr { top: 20px; right: 20px; }
+        .bl { bottom: 20px; left: 20px; } .br { bottom: 20px; right: 20px; }
 
         .video-item { background: white; padding: 15px; margin: 10px auto; width: 80%; max-width: 400px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; }
         .btn-download { background-color: #0070f3; color: white; text-decoration: none; padding: 10px 15px; border-radius: 4px; font-weight: bold; }
@@ -30,15 +26,15 @@
 </head>
 <body>
 
-    <div class="haiti-flag tl"></div><div class="haiti-flag tr"></div>
-    <div class="haiti-flag bl"></div><div class="haiti-flag br"></div>
+    <div class="flag tl"></div><div class="flag tr"></div>
+    <div class="flag bl"></div><div class="flag br"></div>
 
     <h1>Bienvenue au portail vidéo de Noékamado</h1>
     <p class="devise">"On est élevé dans le sang et on mourra dans le sang"</p>
 
-    <!-- Remplace "ta_video.mp4" par le vrai nom de ton fichier -->
     <div class="video-item">
         <span>Ma Super Vidéo</span>
+        <!-- IMPORTANT : Remplace 'ta_video.mp4' par le nom exact de ton fichier vidéo -->
         <a href="ta_video.mp4" download class="btn-download">Télécharger</a>
     </div>
 
